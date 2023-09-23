@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swagger-config'); 
 
 const app = express();
 
@@ -8,16 +10,17 @@ const app = express();
 app.use(bodyParser.json());
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://iiotedge:dyKUmRFHaUSSR6Gt@cluster0.ofaeqwh.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
+const mongodbUri = 'mongodb://localhost:27017/books';
+mongoose.connect(mongodbUri, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on('error', (err) => {
   console.error('MongoDB connection error:', err);
 });
 
-// Define routes here
-// ...
-
 // Mount API routes
 app.use('/api', require('./routes/books'));
+
+// Serve Swagger documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
