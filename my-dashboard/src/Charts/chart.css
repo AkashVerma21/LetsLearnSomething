@@ -1,0 +1,34 @@
+.progress-bar-container {
+    margin: 20px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: lightgray;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+  }
+  
+  .completed {
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .empty {
+    height: 100%;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .percentage-text {
+    font-size: 22px;
+    font-weight:900;
+    margin: 0;
+  }
+  
+  .name-text {
+    font-weight: 500;
+    margin: 10px auto 6px;
+  }
+  

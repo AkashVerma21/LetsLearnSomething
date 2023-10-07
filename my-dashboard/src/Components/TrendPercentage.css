@@ -1,0 +1,23 @@
+.percentageContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
+}
+
+.percentageValue {
+  font-size: 42px;
+}
+.trendContainer {
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+.trendImage {
+  width: 25px;
+  height: 25px;
+}
+.trendValue {
+  margin: 0;
+}

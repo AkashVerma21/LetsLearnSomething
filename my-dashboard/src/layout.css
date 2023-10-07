@@ -1,0 +1,35 @@
+/* src/Layout.css */
+.layout {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 114%;
+  grid-template-areas:
+    "top-left top-right"
+    "bottom-left bottom-right";
+  height: 100%;
+}
+
+.top-left {
+  grid-area: top-left;
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  height: 100%;
+}
+
+.top-right {
+  grid-area: top-right;
+  padding: 10px;
+  height: 100%;
+}
+
+.bottom-left {
+  grid-area: bottom-left;
+  /* border: 1px solid #ccc; */
+  height: 100%;
+}
+
+.bottom-right {
+  grid-area: bottom-right;
+  /* border: 1px solid #ccc; */
+  height: 100%;
+}
